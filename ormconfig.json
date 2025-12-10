@@ -4,8 +4,8 @@
   "port": 3306,
   "username": "root",
   "password": "123456",
-  "database": "your_database_name",
-  "entities": ["src/**/*.entity.ts"],
+  "database": "ceshi",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true,
   "logging": true
 }
