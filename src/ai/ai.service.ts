@@ -1,7 +1,22 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Readable } from 'stream';
-
+interface DashScopeResponse {
+  choices?: Array<{
+    finish_reason?: string;
+    delta?: {
+      content?: string;
+    };
+  }>;
+}
+interface DashScopeStreamData {
+  choices?: Array<{
+    finish_reason?: string;
+    delta?: {
+      content?: string;
+    };
+  }>;
+}
 @Injectable()
 export class AiService {
   constructor(private configService: ConfigService) {}
@@ -36,6 +51,7 @@ export class AiService {
     let ended = false;
 
     return new Readable({
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       async read() {
         if (ended) return;
 
@@ -66,9 +82,9 @@ export class AiService {
               return;
             }
 
-            let json: any;
+            let json: DashScopeStreamData;
             try {
-              json = JSON.parse(data);
+              json = JSON.parse(data) as DashScopeResponse;
             } catch {
               continue;
             }

@@ -1,11 +1,4 @@
-import {
-  Controller,
-  Post,
-  Body,
-  Res,
-  HttpStatus,
-  Logger,
-} from '@nestjs/common';
+import { Controller, Post, Body, Res, Logger } from '@nestjs/common';
 import { Response } from 'express';
 import { AiService } from './ai.service';
 
