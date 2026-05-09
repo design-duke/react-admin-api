@@ -9,6 +9,7 @@
     "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
+    "rootDir": "./src",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
@@ -19,6 +20,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "ignoreDeprecations": "6.0"
   }
 }

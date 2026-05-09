@@ -9,10 +9,10 @@ import {
 @Entity()
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ length: 100, unique: true }) // ← 用户名必须唯一
-  username: string; // ← 新增或替换 email
+  username!: string; // ← 新增或替换 email
 
   // @Column({ length: 100 })
   // name: string;
@@ -22,11 +22,11 @@ export class User {
   // email?: string;
 
   @Column()
-  password: string;
+  password!: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 }

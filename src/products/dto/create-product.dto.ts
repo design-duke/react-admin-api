@@ -2,13 +2,13 @@ import { IsString, IsNumber, IsOptional, IsUrl } from 'class-validator';
 
 export class CreateProductDto {
   @IsString()
-  name: string;
+  name!: string;
 
   @IsString()
-  sku: string;
+  sku!: string;
 
   @IsString()
-  price: string;
+  price!: string;
 
   @IsString()
   @IsOptional()

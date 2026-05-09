@@ -10,7 +10,7 @@ export class RegisterDto {
   })
   @IsString()
   @IsNotEmpty()
-  username: string;
+  username!: string;
 
   // @IsString()
   // @IsNotEmpty()
@@ -28,5 +28,5 @@ export class RegisterDto {
   @IsString()
   @MinLength(6)
   @IsNotEmpty()
-  password: string;
+  password!: string;
 }
